@@ -41,8 +41,10 @@ class _MobileAboutState extends State<MobileAbout> {
   Color normal = Colors.black;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30 ),)),
+      margin: EdgeInsets.zero,
+      //color: Colors.transparent,
       //height: MediaQuery.of(context).size.height,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 50, 10, 20),
@@ -99,7 +101,7 @@ class _MobileAboutState extends State<MobileAbout> {
                   InkWell(
                        onTap: () async {
                       if (!await launchUrl(
-                          Uri.parse('https://twitter.com/Don_MJ1'))) {
+                          Uri.parse('https://twitter.com/_DonMJ'))) {
                         throw 'Could not launch page';
                       }
                     },
@@ -125,9 +127,9 @@ class _MobileAboutState extends State<MobileAbout> {
                         shape: RoundedRectangleBorder(
                             //to set border radius to button
                             borderRadius: BorderRadius.circular(6)),
-
+    
                         //to set border radius to button
-
+    
                         padding:
                             const EdgeInsets.all(14) //content padding inside button
                         ),
@@ -143,10 +145,14 @@ class _MobileAboutState extends State<MobileAbout> {
                     child: Text('Download CV')),
               ],
             ),
-            SizedBox(
-              height: 90.h,
+             SizedBox(
+              height: 40.h,
             ),
             Divider(height: 5, color: Colors.black,),
+            SizedBox(
+              height: 50.h,
+            ),
+            
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -164,7 +170,7 @@ class _MobileAboutState extends State<MobileAbout> {
                             child: Text(
                               'Skills',
                               style: GoogleFonts.poppins(
-                                fontSize: 26.sm,
+                                fontSize: 20.sm,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -256,7 +262,7 @@ class _MobileAboutState extends State<MobileAbout> {
                 ),
               ),
             ),
-            Divider(height: 5, color: Colors.black,),
+          
           ],
         ),
       ),

@@ -144,14 +144,15 @@ class MobilePortfolio extends StatefulWidget {
 class _MobilePortfolioState extends State<MobilePortfolio> {
   @override
   Widget build(BuildContext context) {
-      return Container(
-         color: Colors.white,
+      return Card(
+        margin: EdgeInsets.zero,
+         //color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.only( top: 30),
-              child: Text('Projects', style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),),
+              child: Text('Projects', style: GoogleFonts.poppins(fontSize: 20.sm, fontWeight: FontWeight.bold,),),
             ),
             
             GridView.builder(

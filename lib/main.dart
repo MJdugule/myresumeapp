@@ -32,9 +32,15 @@ class MyApp extends StatelessWidget {
       title: 'MJ Portfolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        
+        visualDensity: VisualDensity.adaptivePlatformDensity,
          textTheme: GoogleFonts.poppinsTextTheme(),
         primarySwatch: Colors.blueGrey,
       ),
+      
+       darkTheme: ThemeData(                           // New
+        brightness: Brightness.dark,                  // New
+      ), 
       home: HomeScreen()
     );
   }
