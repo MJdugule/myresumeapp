@@ -33,4 +33,10 @@ List<Project> projectList = <Project>[
       hoverImage: 'assets/bubhover.png',
       link: 'https://github.com/MJdugule/bub-it',
       image: 'assets/bub.png'),
+      Project(
+      name: 'Repair Home',
+      about: 'A simple UI design for a repair management app',
+      hoverImage: 'assets/repairhover.png',
+      link: 'https://github.com/MJdugule/Group-61-capstone2',
+      image: 'assets/repair.png'),
 ];

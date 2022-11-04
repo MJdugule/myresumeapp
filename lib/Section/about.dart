@@ -53,23 +53,23 @@ class _MobileAboutState extends State<MobileAbout> {
             Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  'Hello, I\'m MJ',
-                  style: GoogleFonts.manuale(
-                    fontSize: 39.sm,
-                    fontWeight: FontWeight.bold,
+                  'Hello, I am Joshua',
+                  style: GoogleFonts.poppins(
+                    fontSize: 33.sm,
+                    fontWeight: FontWeight.w600,
                   ),
                 )),
             Text(
               'Software Developer',
               textScaleFactor: 0.7,
               style: GoogleFonts.poppins(
-                  fontSize: 28.sm,
+                  fontSize: 26.sm,
                   fontWeight: FontWeight.w600,
                   height: 2.1,
-                  letterSpacing: 1),
+                  letterSpacing: .3),
             ),
             Text(
-              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integration. I Offer advanced knowledge of in-demand programming languages. Background writing code and developing systems for Mobile, Web and Desktop applications.',
+              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integrations. I Offer advanced knowledge of in-demand programming languages. Constantly striving to learn new technologies and look to ways to better myself in this rapidly changing industry. I have a background of writing code and developing systems for Mobile, Web and Desktop applications.',
               textScaleFactor: 0.8,
               style: GoogleFonts.poppins(
                   fontSize: 21.sm, fontWeight: FontWeight.w500, height: 1.5),
@@ -77,12 +77,12 @@ class _MobileAboutState extends State<MobileAbout> {
             Container(
               height: 90.h,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/linkedin.png',
-                    height: 40.h,
-                  ),
+                  // Image.asset(
+                  //   'assets/linkedin.png',
+                  //   height: 40.h,
+                  // ),
                   InkWell(
                     onTap: () async {
                       if (!await launchUrl(
@@ -90,14 +90,12 @@ class _MobileAboutState extends State<MobileAbout> {
                         throw 'Could not launch page';
                       }
                     },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 30.sm),
-                      child: Image.asset(
-                        'assets/github.png',
-                        height: 40.h,
-                      ),
+                    child: Image.asset(
+                      'assets/github.png',
+                      height: 40.h,
                     ),
                   ),
+                  SizedBox(width: 20,),
                   InkWell(
                        onTap: () async {
                       if (!await launchUrl(
@@ -116,28 +114,39 @@ class _MobileAboutState extends State<MobileAbout> {
             SizedBox(
               height: 10,
             ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    onSurface: Colors.white,
-                    primary: normal, //background color of button
-                    elevation: 8, //elevation of button
-                    shape: RoundedRectangleBorder(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        onSurface: Colors.white,
+                        primary: normal, //background color of button
+                        elevation: 8, //elevation of button
+                        shape: RoundedRectangleBorder(
+                            //to set border radius to button
+                            borderRadius: BorderRadius.circular(6)),
+
                         //to set border radius to button
-                        borderRadius: BorderRadius.circular(6)),
 
-                    //to set border radius to button
-
-                    padding:
-                        const EdgeInsets.all(14) //content padding inside button
-                    ),
-                onHover: (value) {
-                  normal = Colors.blueGrey;
-                },
-                onPressed: () {},
-                child: Text('Download CV')),
-            SizedBox(
-              height: 100.h,
+                        padding:
+                            const EdgeInsets.all(14) //content padding inside button
+                        ),
+                    onHover: (value) {
+                      normal = Colors.blueGrey;
+                    },
+                    onPressed: ()async {
+                       if (!await launchUrl(
+                              Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(2).pdf?alt=media&token=ee6225ec-3096-40fb-a0e3-c4a9fdb7f554'))) {
+                            throw 'Could not launch page';
+                          }
+                    },
+                    child: Text('Download CV')),
+              ],
             ),
+            SizedBox(
+              height: 90.h,
+            ),
+            Divider(height: 5, color: Colors.black,),
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -150,14 +159,18 @@ class _MobileAboutState extends State<MobileAbout> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Center(
-                          child: Text(
-                            'My Skills',
-                            style: GoogleFonts.poppins(
-                              fontSize: 30.sm,
-                              fontWeight: FontWeight.bold,
+                          child: Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: Text(
+                              'Skills',
+                              style: GoogleFonts.poppins(
+                                fontSize: 26.sm,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
+                       
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.85,
@@ -177,9 +190,7 @@ class _MobileAboutState extends State<MobileAbout> {
                           // circularStrokeCap: CircularStrokeCap.round,
                           progressColor: Colors.green,
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        Divider(height: 5, color: Colors.black,),
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.7,
@@ -199,9 +210,7 @@ class _MobileAboutState extends State<MobileAbout> {
                           //circularStrokeCap: CircularStrokeCap.round,
                           progressColor: Colors.green,
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                     Divider(height: 5, color: Colors.black,),
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.5,
@@ -221,9 +230,7 @@ class _MobileAboutState extends State<MobileAbout> {
                           // circularStrokeCap: CircularStrokeCap.round,
                           progressColor: Colors.green,
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        Divider(height: 5, color: Colors.black,),
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.45,
@@ -249,6 +256,7 @@ class _MobileAboutState extends State<MobileAbout> {
                 ),
               ),
             ),
+            Divider(height: 5, color: Colors.black,),
           ],
         ),
       ),
@@ -285,38 +293,36 @@ class _DesktopAboutState extends State<DesktopAbout> {
                   Container(
                       width: MediaQuery.of(context).size.width,
                       child: Text(
-                        'Hello, I\'m MJ',
-                        style: GoogleFonts.manuale(
-                          fontSize: 39.sm,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
-                  Text(
-                    'Software Developer',
-                    textScaleFactor: 0.7,
-                    style: GoogleFonts.poppins(
-                        fontSize: 28.sm,
-                        fontWeight: FontWeight.w600,
-                        height: 2.1,
-                        letterSpacing: 1),
+                  'Hello, I am Joshua',
+                  style: GoogleFonts.poppins(
+                    fontSize: 33.sm,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    'I am a Highly skilled software development professional bringing enormous talents for software design, development and integration. I Offer advanced knowledge of in-demand programming languages. Background writing code and developing systems for Mobile, Web and Desktop applications.',
-                    textScaleFactor: 0.8,
-                    style: GoogleFonts.poppins(
-                        fontSize: 21.sm,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5),
-                  ),
+                )),
+                   Text(
+              'Software Developer',
+              textScaleFactor: 0.7,
+              style: GoogleFonts.poppins(
+                  fontSize: 26.sm,
+                  fontWeight: FontWeight.w600,
+                  height: 2.1,
+                  letterSpacing: .3),
+            ),
+            Text(
+              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integrations. I Offer advanced knowledge of in-demand programming languages. Constantly striving to learn new technologies and look to ways to better myself in this rapidly changing industry. I have a background of writing code and developing systems for Mobile, Web and Desktop applications.',
+              textScaleFactor: 0.8,
+              style: GoogleFonts.poppins(
+                  fontSize: 21.sm, fontWeight: FontWeight.w500, height: 1.5),
+            ),
                   Container(
                     height: 90.h,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/linkedin.png',
-                          height: 30.h,
-                        ),
+                        // Image.asset(
+                        //   'assets/linkedin.png',
+                        //   height: 30.h,
+                        // ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 30.sm),
                           child: Image.asset(
@@ -351,7 +357,12 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       onHover: (value) {
                         normal = Colors.blueGrey;
                       },
-                      onPressed: () {},
+                      onPressed: () async {
+                             if (!await launchUrl(
+                          Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(4).pdf?alt=media&token=7368ebc2-6a16-4208-a356-9e5266cba569'))) {
+                        throw 'Could not launch page';
+                      }
+                      },
                       child: Text('Download CV'))
                 ],
               ),

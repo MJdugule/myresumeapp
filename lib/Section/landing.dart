@@ -17,7 +17,18 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(builder: ((context, child) {
-          return FadeInImage.memoryNetwork(placeholder: kTransparentImage, image: 'https://i.gifer.com/1Eqt.gif', fit: BoxFit.cover, height: MediaQuery.of(context).size.height, width: MediaQuery.of(context).size.width,);
+      return Container(
+        color: Color(0xFF73385a),
+         width: MediaQuery.of(context).size.width,
+         height: MediaQuery.of(context).size.height,
+        child: Align(
+          alignment: Alignment.bottomRight,
+          child: Container(
+            constraints: BoxConstraints(
+          maxWidth: 600
+        ),
+            child: Image.asset('assets/no.png', fit: BoxFit.fill,   height: MediaQuery.of(context).size.height-50,))));
+          // return FadeInImage.memoryNetwork(placeholder: kTransparentImage, image: 'https://i.gifer.com/1Eqt.gif', fit: BoxFit.cover, height: MediaQuery.of(context).size.height, width: MediaQuery.of(context).size.width,);
 //           Center(child: 
 //           Column(
 //             mainAxisAlignment: MainAxisAlignment.center,
