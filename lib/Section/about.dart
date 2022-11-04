@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatefulWidget {
@@ -88,6 +89,7 @@ class _MobileAboutState extends State<MobileAbout> {
                   InkWell(
                     onTap: () async {
                       if (!await launchUrl(
+                        mode: LaunchMode.externalApplication,
                           Uri.parse('https://github.com/MJdugule'))) {
                         throw 'Could not launch page';
                       }
@@ -101,6 +103,7 @@ class _MobileAboutState extends State<MobileAbout> {
                   InkWell(
                        onTap: () async {
                       if (!await launchUrl(
+                        mode: LaunchMode.externalApplication,
                           Uri.parse('https://twitter.com/_DonMJ'))) {
                         throw 'Could not launch page';
                       }
@@ -138,7 +141,10 @@ class _MobileAboutState extends State<MobileAbout> {
                     },
                     onPressed: ()async {
                        if (!await launchUrl(
-                              Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(2).pdf?alt=media&token=ee6225ec-3096-40fb-a0e3-c4a9fdb7f554'))) {
+                              Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(4).pdf?alt=media&token=7368ebc2-6a16-4208-a356-9e5266cba569'),
+                              mode: LaunchMode.externalApplication
+                              )
+                              ) {
                             throw 'Could not launch page';
                           }
                     },
@@ -148,6 +154,18 @@ class _MobileAboutState extends State<MobileAbout> {
              SizedBox(
               height: 40.h,
             ),
+            MirrorAnimationBuilder<double>(
+      tween: Tween(begin: -10.0, end: MediaQuery.of(context).size.width-50), // value for offset x-coordinate
+      duration: const Duration(seconds: 2),
+      curve: Curves.easeInOutSine, // non-linear animation
+      builder: (context, value, child) {
+        return Transform.translate(
+          offset: Offset(value, 0), // use animated value for x-coordinate
+          child: child,
+        );
+      },
+      child: CircleAvatar(radius: 10, backgroundColor: Color.fromARGB(255, 141, 59, 107),)
+    ),
             Divider(height: 5, color: Colors.black,),
             SizedBox(
               height: 50.h,
@@ -258,6 +276,18 @@ class _MobileAboutState extends State<MobileAbout> {
                     SizedBox(
                       height: 20,
                     ),
+                         MirrorAnimationBuilder<double>(
+      tween: Tween(begin: -10.0, end: MediaQuery.of(context).size.width-50), // value for offset x-coordinate
+      duration: const Duration(seconds: 2),
+      curve: Curves.easeInOutSine, // non-linear animation
+      builder: (context, value, child) {
+        return Transform.translate(
+          offset: Offset(value, 0), // use animated value for x-coordinate
+          child: child,
+        );
+      },
+      child: CircleAvatar(radius: 10, backgroundColor: Color.fromARGB(255, 141, 59, 107),)
+    ),
                   ],
                 ),
               ),
@@ -281,14 +311,16 @@ class _DesktopAboutState extends State<DesktopAbout> {
   Color normal = Colors.black;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 1.09.h,
+    return Card(
+      margin: EdgeInsets.zero,
+      //color: Colors.white,
+      // width: MediaQuery.of(context).size.width,
+      // height: MediaQuery.of(context).size.height / 1.09.h,
       child: Padding(
         padding: EdgeInsets.fromLTRB(40.w, 50.h, 40.w, 10.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: MediaQuery.of(context).size.width / 2.5,
@@ -301,7 +333,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       child: Text(
                   'Hello, I am Joshua',
                   style: GoogleFonts.poppins(
-                    fontSize: 33.sm,
+                    fontSize: 30.sm,
                     fontWeight: FontWeight.w600,
                   ),
                 )),
@@ -329,17 +361,33 @@ class _DesktopAboutState extends State<DesktopAbout> {
                         //   'assets/linkedin.png',
                         //   height: 30.h,
                         // ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 30.sm),
-                          child: Image.asset(
-                            'assets/github.png',
-                            height: 30.h,
-                          ),
-                        ),
-                        Image.asset(
-                          'assets/twitter.png',
-                          height: 30.h,
-                        ),
+                           InkWell(
+                    onTap: () async {
+                      if (!await launchUrl(
+                        mode: LaunchMode.externalApplication,
+                          Uri.parse('https://github.com/MJdugule'))) {
+                        throw 'Could not launch page';
+                      }
+                    },
+                    child: Image.asset(
+                      'assets/github.png',
+                      height: 20.w,
+                    ),
+                  ),
+                  SizedBox(width: 20,),
+                  InkWell(
+                       onTap: () async {
+                      if (!await launchUrl(
+                        mode: LaunchMode.externalApplication,
+                          Uri.parse('https://twitter.com/_DonMJ'))) {
+                        throw 'Could not launch page';
+                      }
+                    },
+                    child: Image.asset(
+                      'assets/twitter.png',
+                      height: 20.w,
+                    ),
+                  ),
                       ],
                     ),
                   ),
@@ -365,6 +413,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       },
                       onPressed: () async {
                              if (!await launchUrl(
+                              mode: LaunchMode.externalApplication,
                           Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(4).pdf?alt=media&token=7368ebc2-6a16-4208-a356-9e5266cba569'))) {
                         throw 'Could not launch page';
                       }
@@ -381,7 +430,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                   child: Text(
                     'My Skills',
                     style: GoogleFonts.poppins(
-                      fontSize: 32.sm,
+                      fontSize: 30.sm,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

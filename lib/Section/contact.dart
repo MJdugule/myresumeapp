@@ -57,7 +57,8 @@ class _ContactMeState extends State<ContactMe> {
                         InkWell(
                           onTap: () async {
                             if (!await launchUrl(
-                            Uri.parse('https://wa.me/+2348130652995'))) {
+                            Uri.parse('https://wa.me/+2348130652995'),
+                            mode: LaunchMode.externalApplication)) {
                           throw 'Could not launch page';
                         }
                           },
@@ -68,6 +69,7 @@ class _ContactMeState extends State<ContactMe> {
                      InkWell(
                        onTap: () async{
                           if (!await launchUrl(
+                            mode: LaunchMode.externalApplication,
                          Uri.parse('https://t.me/Slasher56'))) {
                        throw 'Could not launch page';
                      }
@@ -76,6 +78,7 @@ class _ContactMeState extends State<ContactMe> {
                       children: [
                         InkWell(
                           onTap: () async{
+                           
                             Uri url = Uri(scheme: "tel", path: "+2348130652995");
     if (await canLaunchUrl(url)) {
       await launchUrl(url);

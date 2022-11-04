@@ -43,50 +43,42 @@ class _DesktopPortfolioState extends State<DesktopPortfolio> {
  
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey[200],
+    return Card(
+      margin: EdgeInsets.zero,
+      //color: Colors.grey[200],
       child: Row(
         children: [
           Container(
             // color: Colors.red,
             width: 310,
             height: MediaQuery.of(context).size.height,
-            child: Material(
-              elevation: 10,
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('Contact Me', style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),),
-                  ),
-                  Column(
-                    children: [
-                      Image.asset('assets/gmail.png', height: 70,),
-                      Text('morkaj360@gmail.com',style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black),),
-                    ],
-                  ), 
-                  Column(
-                    children: [
-                      Image.asset('assets/whatsapp.png', height: 70,),
-                      Text('https://wa.me/+2348130652995', style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black),),
-                    ],
-                  ),
-                   Column(
-                    children: [
-                      Image.asset('assets/telegram.png', height: 70,),
-                      Text('https://t.me/Slasher56', style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black),),
-                    ],
-                  ),   Column(
-                    children: [
-                      Image.asset('assets/phone.jpg', height: 70,),
-                      Text('+2348130652995',style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black),),
-                    ],
-                  ),
-               
-                ],
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Text('Contact Me', style: GoogleFonts.poppins(fontSize: 20.sm, fontWeight: FontWeight.bold,
+                  ),),
+                ),
+                ListTile(
+leading:  Image.asset('assets/gmail.png', height: 25.sm,),
+title:  Text('morkaj360@gmail.com',style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400, ),),
+                ),
+                          ListTile(
+leading:  Image.asset('assets/whatsapp.png', height: 25.sm,),
+title:  Text('https://wa.me/+2348130652995', style: GoogleFonts.poppins(fontSize: 15.sm, fontWeight: FontWeight.w400 ),),
+                ),  ListTile(
+leading:  Image.asset('assets/telegram.png', height: 25.sm,),
+title:  Text('https://t.me/Slasher56', style: GoogleFonts.poppins(fontSize: 15.sm, fontWeight: FontWeight.w400 ),),
+                ),ListTile(
+leading:  Image.asset('assets/phone.jpg', height: 25.sm,),
+title:  Text('+2348130652995', style: GoogleFonts.poppins(fontSize: 15.sm, fontWeight: FontWeight.w400 ),),
+                ),
+              
+              
+              
+             
+              ],
             ),
           ),
           Container(
@@ -174,6 +166,7 @@ class _MobilePortfolioState extends State<MobilePortfolio> {
                           scrollDirection: Axis.vertical,
                           physics:BouncingScrollPhysics(),
                         ),
+                        
                         ContactMe()
           ],
         ),

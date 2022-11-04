@@ -27,7 +27,7 @@ class _LandingScreenState extends State<LandingScreen> {
             constraints: BoxConstraints(
           maxWidth: 600
         ),
-            child: Image.asset('assets/no.png', fit: BoxFit.fill,   height: MediaQuery.of(context).size.height-50,))));
+            child: Image.asset('assets/no.png', fit: BoxFit.fill,  height: MediaQuery.of(context).size.height-50,))));
           // return FadeInImage.memoryNetwork(placeholder: kTransparentImage, image: 'https://i.gifer.com/1Eqt.gif', fit: BoxFit.cover, height: MediaQuery.of(context).size.height, width: MediaQuery.of(context).size.width,);
 //           Center(child: 
 //           Column(

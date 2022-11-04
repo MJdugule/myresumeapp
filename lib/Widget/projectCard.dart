@@ -56,7 +56,7 @@ class _ProjectCardState extends State<ProjectCard> {
                             overflow: TextOverflow.ellipsis,
                             style: GoogleFonts.poppins(
                             
-                                height: 1.2.h, fontSize: 13.sm),
+                                height: 1.4.sm, fontSize: 13.sm),
                           )),
                           Spacer(),
                           TextButton(
@@ -78,7 +78,7 @@ class _ProjectCardState extends State<ProjectCard> {
                                 //   normal = Colors.blueGrey;
                               },
                               onPressed: () async {
-                                if (!await launchUrl(_url)) {
+                                if (!await launchUrl(_url, mode: LaunchMode.externalApplication)) {
                                   throw 'Could not launch $_url';
                                 }
                               },
