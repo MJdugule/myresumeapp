@@ -10,22 +10,22 @@ The starting point is main.dart, the screen folder contains all the different pa
 # Design
 A scrollable page, with a parallex scroll animation at the beginning, with cards to display projects
 
-#Libraries
+# Libraries
 simple animation: for sliding animation
 url launcher: For opening urls link
 percentage indicator: Use to show percent animation
 flutter screenutil: for widget reponsive size
 animated text kit: for animating text
 
-#Future Features
+# Future Features
 A direct messaging section for one on one chat
 
-#APK Link
+# APK Link
 https://drive.google.com/file/d/1arCEXpKObi8bZZDOVPoKufCwpzqJSp8V/view?usp=sharing
 
-#Challenges faced
+# Challenges faced
 App refused to run on appetize.io after uploading,
 App only runs on android 12 on appetize.io,
 
-#App Appetize link
+# App Appetize link
 https://appetize.io/app/tuluz4xadachmf4gtgkihavy5m?device=pixel4&osVersion=12.0&scale=75
