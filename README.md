@@ -5,7 +5,7 @@ A simple page app with details about me, my social links, my cv and my portifoli
 ## Code base
 
 This app is created with flutter/dart, with different views for mobile and web version.
-The starting point is main.dart, the screen folder contains all the different page file, the model folder contains, the properties for the widget in the widget folder.
+The starting point is main.dart, the Section folder contains all the different page file, the model folder contains all the models, for the widget in the widget folder.
 
 ## Design
 A scrollable page, with a parallex scroll animation at the beginning, with cards to display projects
