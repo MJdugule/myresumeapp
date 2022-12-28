@@ -43,7 +43,7 @@ class _MobileAboutState extends State<MobileAbout> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30 ),)),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30 ),)),
       margin: EdgeInsets.zero,
       //color: Colors.transparent,
       //height: MediaQuery.of(context).size.height,
@@ -72,7 +72,7 @@ class _MobileAboutState extends State<MobileAbout> {
                   letterSpacing: .3),
             ),
             Text(
-              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integrations. I Offer advanced knowledge of in-demand programming languages. Constantly striving to learn new technologies and look to ways to better myself in this rapidly changing industry. I have a background of writing code and developing systems for Mobile, Web and Desktop applications.',
+              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integrations. I am a self-trained programmer, learning through language documentation, and building solutions, before advancing my skills by taking various courses and examinations to earn the certifications.',
               textScaleFactor: 0.8,
               style: GoogleFonts.poppins(
                   fontSize: 21.sm, fontWeight: FontWeight.w500, height: 1.5),
@@ -86,6 +86,20 @@ class _MobileAboutState extends State<MobileAbout> {
                   //   'assets/linkedin.png',
                   //   height: 40.h,
                   // ),
+                     InkWell(
+                          onTap: () async{
+                                if (!await launchUrl(
+                       mode: LaunchMode.externalApplication,
+                          Uri.parse('https://linkedin.com/in/donmj/'))) {
+                        throw 'Could not launch page';
+                      }
+                          },
+                          child: Image.asset(
+                            'assets/linkedin.png',
+                            height: 40.h,
+                          ),
+                        ),
+                        const SizedBox(width: 20,),
                   InkWell(
                     onTap: () async {
                       if (!await launchUrl(
@@ -99,7 +113,7 @@ class _MobileAboutState extends State<MobileAbout> {
                       height: 40.h,
                     ),
                   ),
-                  SizedBox(width: 20,),
+                  const SizedBox(width: 20,),
                   InkWell(
                        onTap: () async {
                       if (!await launchUrl(
@@ -116,7 +130,7 @@ class _MobileAboutState extends State<MobileAbout> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -141,14 +155,14 @@ class _MobileAboutState extends State<MobileAbout> {
                     },
                     onPressed: ()async {
                        if (!await launchUrl(
-                              Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(4).pdf?alt=media&token=7368ebc2-6a16-4208-a356-9e5266cba569'),
+                              Uri.parse('https:https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(6).pdf?alt=media&token=8ad3546c-0f0b-4109-967b-260df688c838'),
                               mode: LaunchMode.externalApplication
                               )
                               ) {
                             throw 'Could not launch page';
                           }
                     },
-                    child: Text('Download CV')),
+                    child: const Text('Download CV')),
               ],
             ),
              SizedBox(
@@ -164,9 +178,9 @@ class _MobileAboutState extends State<MobileAbout> {
           child: child,
         );
       },
-      child: CircleAvatar(radius: 10, backgroundColor: Color.fromARGB(255, 141, 59, 107),)
+      child: const CircleAvatar(radius: 10, backgroundColor: Color.fromARGB(255, 141, 59, 107),)
     ),
-            Divider(height: 5, color: Colors.black,),
+            const Divider(height: 5, color: Colors.black,),
             SizedBox(
               height: 50.h,
             ),
@@ -214,7 +228,7 @@ class _MobileAboutState extends State<MobileAbout> {
                           // circularStrokeCap: CircularStrokeCap.round,
                           progressColor: Colors.green,
                         ),
-                        Divider(height: 5, color: Colors.black,),
+                        const Divider(height: 5, color: Colors.black,),
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.7,
@@ -234,7 +248,7 @@ class _MobileAboutState extends State<MobileAbout> {
                           //circularStrokeCap: CircularStrokeCap.round,
                           progressColor: Colors.green,
                         ),
-                     Divider(height: 5, color: Colors.black,),
+                     const Divider(height: 5, color: Colors.black,),
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.5,
@@ -254,7 +268,7 @@ class _MobileAboutState extends State<MobileAbout> {
                           // circularStrokeCap: CircularStrokeCap.round,
                           progressColor: Colors.green,
                         ),
-                        Divider(height: 5, color: Colors.black,),
+                        const Divider(height: 5, color: Colors.black,),
                         LinearPercentIndicator(
                           animation: true,
                           percent: 0.45,
@@ -273,7 +287,7 @@ class _MobileAboutState extends State<MobileAbout> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                          MirrorAnimationBuilder<double>(
@@ -286,7 +300,7 @@ class _MobileAboutState extends State<MobileAbout> {
           child: child,
         );
       },
-      child: CircleAvatar(radius: 10, backgroundColor: Color.fromARGB(255, 141, 59, 107),)
+      child: const CircleAvatar(radius: 10, backgroundColor: Color.fromARGB(255, 141, 59, 107),)
     ),
                   ],
                 ),
@@ -312,8 +326,10 @@ class _DesktopAboutState extends State<DesktopAbout> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30 ),)),
       margin: EdgeInsets.zero,
-      //color: Colors.white,
+     
+     // color: Colors.white,
       // width: MediaQuery.of(context).size.width,
       // height: MediaQuery.of(context).size.height / 1.09.h,
       child: Padding(
@@ -347,7 +363,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                   letterSpacing: .3),
             ),
             Text(
-              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integrations. I Offer advanced knowledge of in-demand programming languages. Constantly striving to learn new technologies and look to ways to better myself in this rapidly changing industry. I have a background of writing code and developing systems for Mobile, Web and Desktop applications.',
+              'I am a Highly skilled software development professional bringing enormous talents for software design, development and integrations. I am a self-trained programmer, learning through language documentation, and building solutions, before advancing my skills by taking various courses and examinations to earn the certifications.',
               textScaleFactor: 0.8,
               style: GoogleFonts.poppins(
                   fontSize: 21.sm, fontWeight: FontWeight.w500, height: 1.5),
@@ -357,14 +373,24 @@ class _DesktopAboutState extends State<DesktopAbout> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        // Image.asset(
-                        //   'assets/linkedin.png',
-                        //   height: 30.h,
-                        // ),
+                        InkWell(
+                          onTap: () async{
+                                if (!await launchUrl(
+                      //  mode: LaunchMode.externalApplication,
+                          Uri.parse('https://linkedin.com/in/donmj/'))) {
+                        throw 'Could not launch page';
+                      }
+                          },
+                          child: Image.asset(
+                            'assets/linkedin.png',
+                            height: 20.w,
+                          ),
+                        ),
+                        const SizedBox(width: 20,),
                            InkWell(
                     onTap: () async {
                       if (!await launchUrl(
-                        mode: LaunchMode.externalApplication,
+                      //  mode: LaunchMode.externalApplication,
                           Uri.parse('https://github.com/MJdugule'))) {
                         throw 'Could not launch page';
                       }
@@ -374,7 +400,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       height: 20.w,
                     ),
                   ),
-                  SizedBox(width: 20,),
+                  const SizedBox(width: 20,),
                   InkWell(
                        onTap: () async {
                       if (!await launchUrl(
@@ -391,7 +417,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   ElevatedButton(
@@ -414,15 +440,15 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       onPressed: () async {
                              if (!await launchUrl(
                               mode: LaunchMode.externalApplication,
-                          Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(4).pdf?alt=media&token=7368ebc2-6a16-4208-a356-9e5266cba569'))) {
+                          Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(6).pdf?alt=media token=8ad3546c-0f0b-4109-967b-260df688c838'))) {
                         throw 'Could not launch page';
                       }
                       },
-                      child: Text('Download CV'))
+                      child: const Text('Download CV'))
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Column(
               children: [
                 Padding(
