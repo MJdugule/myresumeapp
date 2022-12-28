@@ -440,7 +440,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                       onPressed: () async {
                              if (!await launchUrl(
                               mode: LaunchMode.externalApplication,
-                          Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(6).pdf?alt=media token=8ad3546c-0f0b-4109-967b-260df688c838'))) {
+                          Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(6).pdf?alt=media&token=8ad3546c-0f0b-4109-967b-260df688c838'))) {
                         throw 'Could not launch page';
                       }
                       },
