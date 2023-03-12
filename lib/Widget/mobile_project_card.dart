@@ -26,16 +26,17 @@ class _MobileProjectCardState extends State<MobileProjectCard> {
     final Uri play = Uri.parse(widget.project.play!);
     final Uri figma = Uri.parse(widget.project.figma!);
     return Card(
-     // color: kPrimary,
+      margin: EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 10),
+      color: Colors.grey.shade900.withOpacity(0.3),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 5,
         child: 
         // animate
         //     ? 
             Container(
-             
+            
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 10.0.w),
+                padding:  EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,13 +51,14 @@ class _MobileProjectCardState extends State<MobileProjectCard> {
                       // ),
                         Image.asset(
                           widget.project.image!,
-                          width: 130.w,
+                        //  width: 130.w,
                           height: 250.sm,
                           fit: BoxFit.fill,
                           
                         ),
+                        verticalSpaceSmall,
                       SizedBox(
-                        width: MediaQuery.of(context).size.width/2.7,
+                        //width: MediaQuery.of(context).size.width/2.7,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +67,7 @@ class _MobileProjectCardState extends State<MobileProjectCard> {
                             Text(
                               widget.project.name!,
                               style: GoogleFonts.poppins(
-                                  fontSize: 7.sp, fontWeight: FontWeight.w600),
+                                  fontSize: 15.sp, fontWeight: FontWeight.w600),
                             ),
                            
                             verticalSpaceSmall,

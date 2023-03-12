@@ -124,6 +124,30 @@ class _ProjectCardState extends State<ProjectCard> {
                                       Text("UI/UX")
                                     ],
                                   ),
+                                )):Container(),              widget.project.figma != "" ?
+                              InkWell(
+                                onTap: () async {
+                                   if (!await launchUrl(figma, mode: LaunchMode.externalApplication)) {
+                                    throw 'Could not launch $figma';
+                                  }
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    
+                                    border: Border.all(color: kWhite),  borderRadius: BorderRadius.circular(20)), width: 140,
+                                    height: 35,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.asset("assets/android.png", 
+                                        fit: BoxFit.contain,
+                                       ),
+                                      ),
+
+                                      Text("Downlown App")
+                                    ],
+                                  ),
                                 )):Container(),  
                                
                                 widget.project.link != "" ?
