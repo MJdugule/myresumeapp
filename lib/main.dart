@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/Section/landing.dart';
 import 'package:my_portfolio/home.dart';
 
 Future<void> main() async {
@@ -24,7 +23,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       
-       darkTheme: ThemeData(                           // New
+       darkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        backgroundColor: Colors.black,  
+        cardColor: Colors.black,                         // New
         brightness: Brightness.dark,                  // New
       ), 
       home: HomeScreen()

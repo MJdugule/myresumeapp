@@ -155,7 +155,7 @@ class _MobileAboutState extends State<MobileAbout> {
                     },
                     onPressed: ()async {
                        if (!await launchUrl(
-                              Uri.parse('https:https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(6).pdf?alt=media&token=8ad3546c-0f0b-4109-967b-260df688c838'),
+                              Uri.parse('https://firebasestorage.googleapis.com/v0/b/chat-1d2dc.appspot.com/o/MORKA%20JOSHUA%20CV%20(6).pdf?alt=media&token=8ad3546c-0f0b-4109-967b-260df688c838'),
                               mode: LaunchMode.externalApplication
                               )
                               ) {
@@ -383,7 +383,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                           },
                           child: Image.asset(
                             'assets/linkedin.png',
-                            height: 20.w,
+                            height: 40.h,
                           ),
                         ),
                         const SizedBox(width: 20,),
@@ -397,7 +397,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                     },
                     child: Image.asset(
                       'assets/github.png',
-                      height: 20.w,
+                      height: 40.h,
                     ),
                   ),
                   const SizedBox(width: 20,),
@@ -411,7 +411,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                     },
                     child: Image.asset(
                       'assets/twitter.png',
-                      height: 20.w,
+                      height: 40.h,
                     ),
                   ),
                       ],
@@ -422,8 +422,7 @@ class _DesktopAboutState extends State<DesktopAbout> {
                   ),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          onSurface: Colors.white,
-                          primary: normal, //background color of button
+                          backgroundColor: normal, disabledForegroundColor: Colors.white.withOpacity(0.38), disabledBackgroundColor: Colors.white.withOpacity(0.12), //background color of button
                           elevation: 8, //elevation of button
                           shape: RoundedRectangleBorder(
                               //to set border radius to button

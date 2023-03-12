@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/Model/project_model.dart';
 import 'package:my_portfolio/Section/contact.dart';
+import 'package:my_portfolio/Widget/mobile_project_card.dart';
 import 'package:my_portfolio/Widget/projectCard.dart';
 
 class Portfolio extends StatefulWidget {
@@ -43,84 +44,42 @@ class _DesktopPortfolioState extends State<DesktopPortfolio> {
  
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      //color: Colors.grey[200],
-      child: Row(
-        children: [
-          Container(
-            // color: Colors.red,
-            width: 310,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: Text('Contact Me', style: GoogleFonts.poppins(fontSize: 20.sm, fontWeight: FontWeight.bold,
-                  ),),
-                ),
-                ListTile(
-leading:  Image.asset('assets/gmail.png', height: 25.sm,),
-title:  Text('morkaj360@gmail.com',style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400, ),),
-                ),
-                          ListTile(
-leading:  Image.asset('assets/whatsapp.png', height: 25.sm,),
-title:  Text('https://wa.me/+2348130652995', style: GoogleFonts.poppins(fontSize: 15.sm, fontWeight: FontWeight.w400 ),),
-                ),  ListTile(
-leading:  Image.asset('assets/telegram.png', height: 25.sm,),
-title:  Text('https://t.me/Slasher56', style: GoogleFonts.poppins(fontSize: 15.sm, fontWeight: FontWeight.w400 ),),
-                ),ListTile(
-leading:  Image.asset('assets/phone.jpg', height: 25.sm,),
-title:  Text('+2348130652995', style: GoogleFonts.poppins(fontSize: 15.sm, fontWeight: FontWeight.w400 ),),
-                ),
-              
-              
-              
-             
-              ],
-            ),
-          ),
-          Container(
-              //color: Colors.white,
-              width: MediaQuery.of(context).size.width - 320,
-              height: MediaQuery.of(context).size.height,
-              child: LayoutBuilder(builder: (context, constraints) {
-                if (constraints.maxWidth < 800) {
-                  return GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1,
-                      mainAxisSpacing: 5.0,
-                      childAspectRatio: 350 / 160,
-                    ),
-                    itemBuilder: (BuildContext context, int index) {
-                      return ProjectCard(width: 100.w,project: projectList[index]);
-                    },
-                    itemCount: projectList.length,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    physics: const AlwaysScrollableScrollPhysics(),
-                  );
-                } else {
-                  return GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 5.0,
-                      childAspectRatio: 250 / 160,
-                    ),
-                    itemBuilder: (BuildContext context, int index) {
-    return ProjectCard(project: projectList[index], width: 50.w,);
-                    },
-                    itemCount: projectList.length,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    physics: const AlwaysScrollableScrollPhysics(),
-                  );
-                }
-              })),
-        ],
+    return 
+    Container(
+      color: Colors.black,
+      child: ListView.builder(
+            // gridDelegate:
+            //     const SliverGridDelegateWithFixedCrossAxisCount(
+            //   crossAxisCount: 1,
+            //   //mainAxisSpacing: 1.0,
+            //   childAspectRatio: 200 / 90,
+            // ),
+            itemBuilder: (BuildContext context, int index) {
+              return ProjectCard(project: projectList[index]);
+            },
+            itemCount: projectList.length,
+            shrinkWrap: true,
+            //scrollDirection: Axis.vertical,
+            physics: const NeverScrollableScrollPhysics(),
+      
+        
+      //                else {
+      //                 return GridView.builder(
+      //                   gridDelegate:
+      //                       const SliverGridDelegateWithFixedCrossAxisCount(
+      //                     crossAxisCount: 2,
+      //                     mainAxisSpacing: 5.0,
+      //                     childAspectRatio: 250 / 160,
+      //                   ),
+      //                   itemBuilder: (BuildContext context, int index) {
+      // return ProjectCard(project: projectList[index], width: 50.w,);
+      //                   },
+      //                   itemCount: projectList.length,
+      //                   shrinkWrap: true,
+      //                   scrollDirection: Axis.vertical,
+      //                   physics: const AlwaysScrollableScrollPhysics(),
+      //                 );
+      //               }
       ),
     );
   }
@@ -147,25 +106,43 @@ class _MobilePortfolioState extends State<MobilePortfolio> {
               child: Text('Projects', style: GoogleFonts.poppins(fontSize: 20.sm, fontWeight: FontWeight.bold,),),
             ),
             
-            GridView.builder(
-              padding: EdgeInsets.zero,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1,
-                            mainAxisSpacing: 3.0,
-                            childAspectRatio: 330 / 160,
-                          ),
-                          itemBuilder: (BuildContext context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ProjectCard(project: projectList[index], width: 180.w,),
-                            );
-                          },
-                          itemCount: projectList.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          physics:BouncingScrollPhysics(),
-                        ),
+         Container(
+      color: Colors.black,
+      child: ListView.builder(
+            // gridDelegate:
+            //     const SliverGridDelegateWithFixedCrossAxisCount(
+            //   crossAxisCount: 1,
+            //   //mainAxisSpacing: 1.0,
+            //   childAspectRatio: 200 / 90,
+            // ),
+            itemBuilder: (BuildContext context, int index) {
+              return MobileProjectCard(project: projectList[index]);
+            },
+            itemCount: projectList.length,
+            shrinkWrap: true,
+            //scrollDirection: Axis.vertical,
+            physics: const NeverScrollableScrollPhysics(),
+      
+        
+      //                else {
+      //                 return GridView.builder(
+      //                   gridDelegate:
+      //                       const SliverGridDelegateWithFixedCrossAxisCount(
+      //                     crossAxisCount: 2,
+      //                     mainAxisSpacing: 5.0,
+      //                     childAspectRatio: 250 / 160,
+      //                   ),
+      //                   itemBuilder: (BuildContext context, int index) {
+      // return ProjectCard(project: projectList[index], width: 50.w,);
+      //                   },
+      //                   itemCount: projectList.length,
+      //                   shrinkWrap: true,
+      //                   scrollDirection: Axis.vertical,
+      //                   physics: const AlwaysScrollableScrollPhysics(),
+      //                 );
+      //               }
+      ),
+    ),
                         
                         ContactMe()
           ],

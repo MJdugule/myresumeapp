@@ -77,16 +77,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   )),
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    
-                    SizedBox(height: MediaQuery.of(context).size.height-40.h),
-                    Icon(Icons.keyboard_arrow_down_rounded, color: Colors.white, size: 50,),
-                    AboutPage(),
+              ListView(
+                children: [
+                  
+                  SizedBox(height: MediaQuery.of(context).size.height-40.h),
+                  Icon(Icons.keyboard_arrow_down_rounded, color: Colors.white, size: 50,),
+                  //AboutPage(),
               Portfolio()
-                  ],
-                ),
+                ],
               )
               
             ],

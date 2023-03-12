@@ -7,17 +7,17 @@ import 'package:my_portfolio/constant/app_colors.dart';
 import 'package:my_portfolio/constant/app_spacing.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectCard extends StatefulWidget {
-  const ProjectCard({Key? key, required this.project, this.width})
+class MobileProjectCard extends StatefulWidget {
+  const MobileProjectCard({Key? key, required this.project, this.width})
       : super(key: key);
   final Project project;
   final double? width;
 
   @override
-  State<ProjectCard> createState() => _ProjectCardState();
+  State<MobileProjectCard> createState() => _MobileProjectCardState();
 }
 
-class _ProjectCardState extends State<ProjectCard> {
+class _MobileProjectCardState extends State<MobileProjectCard> {
   bool animate = true;
 
   @override
@@ -33,10 +33,10 @@ class _ProjectCardState extends State<ProjectCard> {
         // animate
         //     ? 
             Container(
-              height: MediaQuery.of(context).size.height/1.4,
+             
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 30.0.w),
-                child: Row(
+                padding:  EdgeInsets.symmetric(horizontal: 10.0.w),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -48,6 +48,13 @@ class _ProjectCardState extends State<ProjectCard> {
                       //   },
                       //   //child: 
                       // ),
+                        Image.asset(
+                          widget.project.image!,
+                          width: 130.w,
+                          height: 250.sm,
+                          fit: BoxFit.fill,
+                          
+                        ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width/2.7,
                         child: Column(
@@ -159,13 +166,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       ),
                       verticalSpaceSmall,
                       verticalSpaceSmall,
-                      Image.asset(
-                          widget.project.image!,
-                          width: 130.w,
-                          height: 250.sm,
-                          fit: BoxFit.fill,
-                          
-                        ),
+                    
                     ],
                   ),
               ),
