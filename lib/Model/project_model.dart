@@ -29,6 +29,12 @@ List<Project> projectList = <Project>[
       about: 'Speak better is an AI-powered grammar checker designed to check and correct grammar for multiple languages. It is backed by an automatic speech recognition system trained with over 650,000 hours of multilingual speech data collected from all over the internet. It offers the necessary tools for fluent and effective communication.',
       link: '',
       image: 'assets/speak.png', play: '', website: 'https://speakbetter.fun', figma: 'https://www.figma.com/file/qpo8GjlqCgqhqlRnVROf7F/Design-leads-team-grit-team-library?node-id=1425%3A7171&t=hgnMCWRtI6Uj3Qqc-0', android: '', appetize: '', ),
+      Project(
+      name: 'Explore',
+      about: 'A mobile app that get the details from all the country in the world, using a open source country API',
+      hoverImage: 'assets/locatehover.png',
+      link: 'https://github.com/MJdugule/explore',
+      image: 'assets/exploreCard.png', play: '', website: '', figma: '', android: 'https://drive.google.com/file/d/1k28Gm89Wt8_WugXxjBSRqYIOjReBVwk6/view?usp=sharing', appetize: 'https://appetize.io/app/54ks4skfl5xdsg22uwjf4kx2be?device=pixel4&osVersion=11.0&scale=75',),
       
       Project(
     
@@ -37,12 +43,7 @@ List<Project> projectList = <Project>[
       about: 'This is a task management app where you can add, edit and delete tasks as well as set a reminder for each task.',
       link: 'https://github.com/MJdugule/mind_pal',
       image: 'assets/mindPla.png', play: '', website: '', figma: 'https://www.figma.com/file/bHtVpfMQrh6BJvWuZQZjy3/SH-To-do-List-App?node-id=1%3A47&t=hgnMCWRtI6Uj3Qqc-0', android: '', appetize: '', ),
-  Project(
-      name: 'Explore',
-      about: 'A mobile app that get the details from all the country in the world, using a open source country API',
-      hoverImage: 'assets/locatehover.png',
-      link: 'https://github.com/MJdugule/explore',
-      image: 'assets/exploreCard.png', play: '', website: '', figma: '', android: 'https://drive.google.com/file/d/1k28Gm89Wt8_WugXxjBSRqYIOjReBVwk6/view?usp=sharing', appetize: 'https://appetize.io/app/54ks4skfl5xdsg22uwjf4kx2be?device=pixel4&osVersion=11.0&scale=75',),
+  
       Project(
       name: 'Bub-it',
       about: 'A url shortening app used to convert long, untrackable links into short, pleasant and memorable links.',

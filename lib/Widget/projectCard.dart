@@ -134,7 +134,7 @@ class _ProjectCardState extends State<ProjectCard> {
                                             fit: BoxFit.contain,
                                           ),
                                         ),
-                                        Text("UI/UX")
+                                        const Text("UI/UX")
                                       ],
                                     ),
                                   ))
@@ -194,7 +194,7 @@ class _ProjectCardState extends State<ProjectCard> {
                                             fit: BoxFit.contain,
                                           ),
                                         ),
-                                        Text("Downlown App")
+                                        const Text("Downlown App")
                                       ],
                                     ),
                                   ))
@@ -213,7 +213,7 @@ class _ProjectCardState extends State<ProjectCard> {
                                         border: Border.all(color: kWhite),
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    width: 140,
+                                    width: 130,
                                     height: 35,
                                     child: Row(
                                       children: [
