@@ -142,7 +142,7 @@ class _ProjectCardState extends State<ProjectCard> {
                               widget.project.appetize != ""
                               ? InkWell(
                                   onTap: () async {
-                                    if (!await launchUrl(figma,
+                                    if (!await launchUrl(appetize,
                                         mode: LaunchMode.externalApplication)) {
                                       throw 'Could not launch $appetize';
                                     }
@@ -173,7 +173,7 @@ class _ProjectCardState extends State<ProjectCard> {
                           widget.project.android != ""
                               ? InkWell(
                                   onTap: () async {
-                                    if (!await launchUrl(figma,
+                                    if (!await launchUrl(android,
                                         mode: LaunchMode.externalApplication)) {
                                       throw 'Could not launch $figma';
                                     }
